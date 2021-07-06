@@ -32,14 +32,14 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => '',
-		'username' => '',
+		'hostname' => 'localhost',
+		'username' => 'root',
 		'password' => '',
-		'database' => '',
+		'database' => 'project_ci',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
-		'DBDebug'  => (ENVIRONMENT !== 'production'),
+		'DBDebug'  => (ENVIRONMENT !== 'development'),
 		'charset'  => 'utf8',
 		'DBCollat' => 'utf8_general_ci',
 		'swapPre'  => '',

@@ -29,7 +29,66 @@
         </tr>
     </tfoot>
 </table>
-
+<div class="modal fade" id="KategoriModal" tabindex="-1" role="dialog" aria-labelledby="KategoriModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="KategoriModalLabel">Form Transaksi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="form_produk" method="POST" enctype='multipart/form-data'>
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <span for="" class="form-label">Nama Pemesan</span>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary">Cari Data</button>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <span for="" class="form-label">Tanggal Pesan</span>
+                </div>
+                <div class="col-md-5">
+                    <input type="date" class="form-control" id="tglpesan">
+                </div>
+                
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <span for="" class="form-label">Item Produk</span>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="produk">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary" id="cari_produk">Cari Data</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <span for="" class="form-label">Jumlah Pesan</span>
+                </div>
+                <div class="col-md-5">
+                    <input type="number" class="form-control" id="jml_pesan">
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div id="#pesan_holder"></div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="save_data">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 $(document).ready(function() {
     var tbl_pesanan= $('#pesanan_tbl').DataTable( {
@@ -41,5 +100,9 @@ $(document).ready(function() {
             { "data" : null, defaultContent: '<button class="btn btn-warning btn-edit btn-sm"><i class="fa fa-pencil"></i> Edit </button> <button class="btn btn-delete btn-danger btn-sm"><i class="fa fa-trash"></i> delete </button>' },
         ]
     });
+
+    $("#btn_add_new").click(function(){
+        $("#KategoriModal").modal('toggle')
+    })
 });
 </script>
